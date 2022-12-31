@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <h2>2023</h2>
+      <h2>HAPPY NEW YEAR</h2>
+    </div>
+    <div class="footer"><span>Copyright 2023 YOONYEOJOON All rights reserved.</span></div>
+    <div class="stars"style="top: 100px; left: 24px;" ><img src="stars.png" alt=""></div>
+    <div class="stars"style="top: 40px; right: 64px;" ><img src="stars.png" alt=""></div>
+    <div class="stars"style="top: 300px; left: 64px;" ><img src="stars.png" alt=""></div>
+    <div class="eyes"><img src="eyes.png" alt=""></div>
+    <div class="stars" style="top: 400px; right: 20px;"><img src="stars.png" alt=""></div>
+    <div class="stars" style="bottom: 240px; right: 80px;"><img src="stars.png" alt=""></div>
+    <div class="stars" style="bottom: 320px; left: 160px;"><img src="stars.png" alt=""></div>
+    <div class="stars" style="bottom: 48px; left: 40px;"><img src="stars.png" alt=""></div>
+    <div class="cage">
+    </div>
+  </div>
+  <script>
+    const cage = document.querySelector(".cage");
+    const MIN_DURATION = 3;
+
+    function makeRabbit(){
+      const rabbit = document.createElement("div");
+      const delay = Math.random() * 10;
+      const duration = Math.random() * 20 + MIN_DURATION;
+      const start = (Math.random() * -200) - 200;
+
+      rabbit.classList.add("rabbit");
+      rabbit.style.left = `${Math.random() * window.screen.width}px`;
+      rabbit.style.top = `${start}px`;
+      rabbit.style.animationDelay = `${delay}s`;
+      rabbit.style.animation = `fall ${duration}s linear`;
+
+      cage.appendChild(rabbit);
+
+      setTimeout(() =>{
+        cage.removeChild(rabbit);
+        makeRabbit()
+      }, (duration + delay) * 1000);
+    }
+    for(let index = 0; index < 10; index++){
+  
+      makeRabbit();
+    }
+
+  </script>
+</body>
+</html>
