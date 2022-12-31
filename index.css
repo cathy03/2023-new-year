@@ -1,0 +1,89 @@
+html{
+  font-family: 'Inter', sans-serif;
+}
+
+.container{
+  position: relative;
+}
+.title{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 100px;
+  z-index: 1000;
+  color: white;
+  mix-blend-mode: difference;  
+}
+h2{
+  font-size: 11vw;
+  font-weight: 200;
+  text-align: center;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  z-index: 1000;
+  color: white;
+  mix-blend-mode: difference;  
+}
+span{
+  font-size: 10px;
+  font-weight: 200;
+  text-align: center;
+  display: block;
+}
+
+.cage{
+  position: fixed;
+  top:0;
+  bottom: 0;
+  left: -75px;
+  right: 0;
+  background: #313131;
+  /* background:white; */
+}
+.rabbit{
+  width: 225px;
+  height: 231px;
+  position: absolute;
+  /* top: -231px; */
+  background-image: url('rabbit.svg');
+  mix-blend-mode: difference;
+}
+
+@keyframes fall {
+  from{}
+  to{
+    transform: translateY(calc(100vh + 500px));
+  }
+}
+
+.stars{
+  position: fixed;
+  z-index: 1000;
+  color: white;
+  mix-blend-mode: difference;  
+}
+
+.stars img{
+  width: 72px;
+}
+
+.eyes{
+  position: fixed;
+  top: 200px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  color: white;
+  mix-blend-mode: difference;  
+}
+.eyes img{
+  width: 82px;
+  display: block;
+  margin: 0 auto;
+}
+
